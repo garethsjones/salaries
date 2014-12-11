@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -46,7 +46,7 @@ public class PayDaysCsvOutputStreamWriterTest {
     @Test
     public void mustWriteEachPayDayRowToOutputStreamInCsvFormat() throws Exception {
 
-        Collection<MonthPayDays> yearPayDays = new ArrayList<>();
+        List<MonthPayDays> yearPayDays = new ArrayList<>();
         yearPayDays.add(new MonthPayDays(new YearMonth(YEAR, NOVEMBER), new LocalDate(YEAR, NOVEMBER, 28), new LocalDate(YEAR, NOVEMBER, 19)));
         yearPayDays.add(new MonthPayDays(new YearMonth(YEAR, DECEMBER), new LocalDate(YEAR, DECEMBER, 31), new LocalDate(YEAR, DECEMBER, 15)));
 

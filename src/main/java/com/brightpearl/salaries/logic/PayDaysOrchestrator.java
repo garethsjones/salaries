@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class PayDaysOrchestrator {
@@ -32,7 +32,7 @@ public class PayDaysOrchestrator {
         LOGGER.info("Pay days file will be written to: {}", inputParameters.getOutputFile().getAbsolutePath());
         LOGGER.info("Pay days will start from: {}", ISODateTimeFormat.yearMonth().print(inputParameters.getStartMonth()));
 
-        Collection<MonthPayDays> yearPayDates = yearPayDaysGenerator.generate(inputParameters.getStartMonth());
+        List<MonthPayDays> yearPayDates = yearPayDaysGenerator.generate(inputParameters.getStartMonth());
 
         payDaysFileWriter.writeToFile(inputParameters.getOutputFile(), yearPayDates);
     }

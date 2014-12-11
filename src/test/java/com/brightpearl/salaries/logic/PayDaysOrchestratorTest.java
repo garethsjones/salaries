@@ -11,7 +11,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.File;
-import java.util.Collection;
+import java.util.List;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -27,7 +27,7 @@ public class PayDaysOrchestratorTest {
     @Mock private InputParameters inputParameters;
     private YearMonth startMonth;
     @Mock private File outputFile;
-    @Mock private Collection<MonthPayDays> yearPayDays;
+    @Mock private List<MonthPayDays> yearPayDays;
 
     @Before
     public void setUp() throws Exception {

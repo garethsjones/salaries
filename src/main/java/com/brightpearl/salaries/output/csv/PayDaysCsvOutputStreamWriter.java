@@ -15,7 +15,7 @@ import org.springframework.util.CollectionUtils;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class PayDaysCsvOutputStreamWriter implements PayDaysOutputStreamWriter {
@@ -28,7 +28,7 @@ public class PayDaysCsvOutputStreamWriter implements PayDaysOutputStreamWriter {
     private static final DateTimeFormatter FORMATTER_DAY = DateTimeFormat.forPattern("EEEE dd");
 
     @Override
-    public void writeToStream(OutputStreamWriter outputStreamWriter, Collection<MonthPayDays> payDays) {
+    public void writeToStream(OutputStreamWriter outputStreamWriter, List<MonthPayDays> payDays) {
 
         try (CSVWriter writer = new CSVWriter(outputStreamWriter, DEFAULT_SEPARATOR, NO_QUOTE_CHARACTER, System.getProperty("line.separator"))) {
             writer.writeNext(HEADERS);

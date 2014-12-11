@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.Collection;
+import java.util.List;
 
 @Service
 public class PayDaysFileWriter {
@@ -24,7 +24,7 @@ public class PayDaysFileWriter {
         this.payDaysOutputStreamWriter = payDaysOutputStreamWriter;
     }
 
-    public void writeToFile(File file, Collection<MonthPayDays> payDays) {
+    public void writeToFile(File file, List<MonthPayDays> payDays) {
 
         try (OutputStreamWriter outputStream = new FileWriter(file)) {
             payDaysOutputStreamWriter.writeToStream(outputStream, payDays);

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -24,7 +23,7 @@ public class YearPayDaysGenerator {
         this.monthPayDaysGenerator = monthPayDaysGenerator;
     }
 
-    public Collection<MonthPayDays> generate(YearMonth startMonth) {
+    public List<MonthPayDays> generate(YearMonth startMonth) {
 
         YearMonth month = new YearMonth(startMonth);
         List<MonthPayDays> paydayRows = new ArrayList<>();
